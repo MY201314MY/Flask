@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>太极生两仪</title>
+    <style>
+        body{
+            margin: 0px;
+            background-color: palegreen;
+        }
+        .box{
+            display: flex;
+            align-items: center;
+            width: 480px;
+            height: 480px;
+            background:linear-gradient(black 50%, white 50%);
+            border-radius: 50%;
+            margin: 64px auto;
+            animation: rotate 10s infinite;
+        }
+        .left,.right{
+            width: 240px;
+            height: 240px;
+        }
+        .left{
+            border-radius: 50%;
+            background-color: white;
+        }
+        .right{
+            border-radius: 50%;
+            background-color: black;
+        }
+        .leftc, .rightc{
+            display: flex;
+            margin-left: 60px;
+            margin-top: 60px;
+            width: 120px;
+            height: 120px;
+        }
+        .leftc{
+            border-radius: 50%;
+            background-color: black;
+            animation: mongoose 2s infinite alternate;
+        }
+        .rightc{
+            border-radius: 50%;
+            background-color: white;
+            animation: mongoose 2s infinite alternate;
+        }
+        @keyframes mongoose {
+            from{
+                transform: scale(0.5);
+            }
+            to{
+                transform: scale(2.0);
+            }
+        }
+        @keyframes rotate {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">众里寻他千百度，蓦然回首，那人却在灯火阑珊处</h1>
+    <div class="box">
+        <div class="left">
+            <div id="left" class="leftc">
+                <p style="color: white; margin: auto;font-size: 96px">M</p>
+            </div>
+        </div>
+        <div class="right">
+            <div id="right" class="rightc">
+                <p style="color: black; margin: auto;font-size: 96px">Y</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        left = document.getElementById("left")
+        right = document.getElementById("right")
+        $('.leftc').click(function () {
+            if (left.style.backgroundColor == ''){
+                console.log("Firstly click, red default.")
+                $(".leftc").css("background-color","red")
+            }
+            else if (left.style.backgroundColor == 'red'){
+                $(".leftc").css("background-color","black")
+            }
+            else {
+                $(".leftc").css("background-color","red")
+            }
+        })
+        $('.rightc').click(function () {
+            if (right.style.backgroundColor == ''){
+                console.log("Firstly click, green default.")
+                $(".rightc").css("background-color","green")
+            }
+            else if (right.style.backgroundColor == 'green'){
+                $(".rightc").css("background-color","white")
+            }
+            else {
+                $(".rightc").css("background-color","green")
+            }
+        })
+    })
+</script>
+</html>
