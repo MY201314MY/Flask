@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<h1>灯火阑珊处</h1>
+<img width="480" height="235" src="/static/me.PNG" />
+<form method="post">
+    <label>用户名：</label><input type="text" name="username" value="Jack"><br>
+    <label>密码：</label><input type="password" name="password"><br>
+    <input type="submit" value="提交"><br>
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+</form>
+<hr>
+</body>
+</html>
